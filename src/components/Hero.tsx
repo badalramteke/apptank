@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { Play, ArrowDown } from "../icons";
+import navigateToSection from "../utils/navigation";
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -101,20 +102,20 @@ const Hero = () => {
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="#register"
+            href={base + "#/register"}
             className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 flex items-center"
           >
             <Play className="w-5 h-5 mr-2" />
             Enter the Tank
           </a>
 
-          <a
-            href="#about"
+          <button
+            onClick={() => navigateToSection("about")}
             className="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-xl font-bold text-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 flex items-center"
           >
             <ArrowDown className="w-5 h-5 mr-2" />
             Learn More
-          </a>
+          </button>
         </div>
       </div>
 

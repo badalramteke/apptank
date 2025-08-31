@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { Menu, X, Shark } from "../icons";
+import navigateToSection from "../utils/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,23 +23,7 @@ const Header = () => {
     { name: "FAQ", type: "section", id: "faq" },
   ];
 
-  function navigateToSection(id?: string) {
-    if (!id) return;
-    const targetBase = base;
-    const currentHash = window.location.hash || "";
-    // Ensure we're on the home route (HashRouter root) so element IDs exist.
-    if (currentHash !== "#/" && currentHash !== "") {
-      // Navigate to root hash first, then scroll after a short delay
-      window.location.href = `${targetBase}#/`;
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 150);
-    } else {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    }
-  }
+  // use shared navigateToSection helper
 
   return (
     <header className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm border-b border-blue-500/20 z-50">
