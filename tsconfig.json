@@ -1,0 +1,50 @@
+// { "files": [], "references": [ { "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" } ] }
+
+// {
+//   "compilerOptions": {
+//     "target": "ESNext",
+//     "useDefineForClassFields": true,
+//     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+//     "module": "ESNext",
+//     "skipLibCheck": true,
+
+//     /* React specific */
+//     "jsx": "react-jsx",
+
+//     "moduleResolution": "Node",
+//     "allowImportingTsExtensions": false,
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "noEmit": true,
+//     "esModuleInterop": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "strict": true
+//   },
+//   "include": ["src"],
+//   "files":[],
+//   "references": [
+//     { "path": "./tsconfig.app.json" },
+//     { "path": "./tsconfig.node.json" }
+//   ]
+// }
+
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"]
+}
