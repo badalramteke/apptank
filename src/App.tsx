@@ -15,8 +15,10 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const base = import.meta.env.BASE_URL || "/";
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={base}>
       <Routes>
         <Route
           path="/"

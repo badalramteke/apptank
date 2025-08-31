@@ -5,14 +5,15 @@ import { Menu, X, Shark } from "../icons";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const base = import.meta.env.BASE_URL || "/";
   const navItems = [
-    { name: "About", href: "/#about" },
-    { name: "Prizes", href: "/#prizes" },
-    { name: "Tracks", href: "/#tracks" },
-    { name: "Timeline", href: "/#timeline" },
-    { name: "Rules", href: "/#rules" },
-    { name: "Register", href: "/register" },
-    { name: "FAQ", href: "/#faq" },
+    { name: "About", href: `${base}#about` },
+    { name: "Prizes", href: `${base}#prizes` },
+    { name: "Tracks", href: `${base}#tracks` },
+    { name: "Timeline", href: `${base}#timeline` },
+    { name: "Rules", href: `${base}#rules` },
+    { name: "Register", href: `${base}register` },
+    { name: "FAQ", href: `${base}#faq` },
   ];
 
   return (
@@ -20,13 +21,15 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-r from-blue-500 to-cyan-400 p-2 rounded-lg">
-              <Shark className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-white">APP TANK</h1>
-              <p className="text-sm text-blue-300">Shark Tank for Apps</p>
-            </div>
+            <a href={base} className="flex items-center space-x-3">
+              <div className="bg-gradient-to-r from-blue-500 to-cyan-400 p-2 rounded-lg">
+                <Shark className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-white">APP TANK</h1>
+                <p className="text-sm text-blue-300">Shark Tank for Apps</p>
+              </div>
+            </a>
           </div>
 
           {/* Desktop Navigation */}

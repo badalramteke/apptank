@@ -262,7 +262,7 @@ const Registration: React.FC = () => {
   return (
     <section
       id="register"
-      className="pt-28 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="pt-36 md:pt-40 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         {/* decorative wave / background can remain simple */}
@@ -336,7 +336,7 @@ const Registration: React.FC = () => {
                   name="name"
                   id="name"
                   required
-                  className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   placeholder="Your full name"
                 />
               </div>
@@ -350,7 +350,7 @@ const Registration: React.FC = () => {
                     name="roll"
                     id="roll"
                     required
-                    className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                     placeholder="eg. IT24024"
                   />
                 </div>
@@ -364,7 +364,7 @@ const Registration: React.FC = () => {
                     aria-label="Branch"
                     required
                     defaultValue=""
-                    className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   >
                     <option value="" disabled>
                       Select your branch (Leader)
@@ -388,7 +388,7 @@ const Registration: React.FC = () => {
                   id="email"
                   type="email"
                   required
-                  className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   placeholder="you@example.com"
                 />
               </div>
@@ -401,7 +401,7 @@ const Registration: React.FC = () => {
                   name="phone"
                   id="phone"
                   type="tel"
-                  className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   placeholder="Mobile number"
                 />
               </div>
@@ -414,7 +414,7 @@ const Registration: React.FC = () => {
                   name="pitch"
                   id="pitch"
                   maxLength={140}
-                  className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-black placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  className="mt-1 block w-full rounded-lg bg-white/6 border border-white/10 px-4 py-2 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                   placeholder="Elevator pitch (max 140 chars)"
                 />
               </div>
@@ -529,7 +529,7 @@ const Registration: React.FC = () => {
                     title="Upload your idea (PDF / PPT only)"
                     ref={qrInputRef}
                     onChange={handleQrInputChange}
-                    className="block text-sm text-sky-900"
+                    className="block text-sm text-sky-100"
                   />
                   <button
                     type="button"
