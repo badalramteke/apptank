@@ -6,15 +6,39 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const base = import.meta.env.BASE_URL || "/";
-  const navItems = [
-    { name: "About", href: `${base}#/` },
-    { name: "Prizes", href: `${base}#/` },
-    { name: "Tracks", href: `${base}#/` },
-    { name: "Timeline", href: `${base}#/` },
-    { name: "Rules", href: `${base}#/` },
-    { name: "Register", href: `${base}#/register` },
-    { name: "FAQ", href: `${base}#/` },
+  // nav items: sections will scroll to ids on the home page; 'route' type will navigate to a route.
+  const navItems: Array<{
+    name: string;
+    type: "section" | "route";
+    id?: string;
+    href?: string;
+  }> = [
+    { name: "About", type: "section", id: "about" },
+    { name: "Prizes", type: "section", id: "prizes" },
+    { name: "Tracks", type: "section", id: "tracks" },
+    { name: "Timeline", type: "section", id: "timeline" },
+    { name: "Rules", type: "section", id: "rules" },
+    { name: "Register", type: "route", href: `${base}#/register` },
+    { name: "FAQ", type: "section", id: "faq" },
   ];
+
+  function navigateToSection(id?: string) {
+    if (!id) return;
+    const targetBase = base;
+    const currentHash = window.location.hash || "";
+    // Ensure we're on the home route (HashRouter root) so element IDs exist.
+    if (currentHash !== "#/" && currentHash !== "") {
+      // Navigate to root hash first, then scroll after a short delay
+      window.location.href = `${targetBase}#/`;
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   return (
     <header className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm border-b border-blue-500/20 z-50">
@@ -34,15 +58,25 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.type === "route" ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => navigateToSection(item.id)}
+                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </button>
+              )
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -62,16 +96,29 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-blue-500/20">
             <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map((item) =>
+                item.type === "route" ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <button
+                    key={item.name}
+                    onClick={() => {
+                      navigateToSection(item.id);
+                      setIsMenuOpen(false);
+                    }}
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium text-left"
+                  >
+                    {item.name}
+                  </button>
+                )
+              )}
             </nav>
           </div>
         )}
