@@ -12,13 +12,13 @@ import Registration from "./components/Registration";
 import RegistrationButton from "./components/Registration_button";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const base = import.meta.env.BASE_URL || "/";
 
   return (
-    <BrowserRouter basename={base}>
+    <HashRouter>
       <Routes>
         <Route
           path="/"
@@ -49,7 +49,7 @@ function App() {
           }
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

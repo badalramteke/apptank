@@ -2,6 +2,7 @@ import React from "react";
 import { ExternalLink, Download, Users, Calendar, MapPin } from "../icons";
 
 const Registration = () => {
+  const base = import.meta.env.BASE_URL || "/";
   return (
     <section
       id="register"
@@ -12,21 +13,21 @@ const Registration = () => {
         {/* Swimming Sharks */}
         <div className="absolute top-10 right-10 w-40 h-40 animate-pulse animate-shark-swim duration-6000 delay-0">
           <img
-            src="/WhatsApp Image 2025-08-30 at 00.02.10_8a435342.jpg"
+            src={base + "WhatsApp Image 2025-08-30 at 00.02.10_8a435342.jpg"}
             alt="Shark"
             className="w-full h-full object-contain opacity-40 animate-bounce duration-6000 delay-0"
           />
         </div>
         <div className="absolute top-1/3 left-5 w-32 h-32 animate-pulse animate-shark-swim duration-8000 delay-2000">
           <img
-            src="/WhatsApp Image 2025-08-30 at 00.02.10_8a435342.jpg"
+            src={base + "WhatsApp Image 2025-08-30 at 00.02.10_8a435342.jpg"}
             alt="Shark"
             className="w-full h-full object-contain opacity-30 animate-bounce duration-8000 delay-2000"
           />
         </div>
         <div className="absolute bottom-20 right-1/4 w-36 h-36 animate-pulse animate-shark-swim duration-7000 delay-4000">
           <img
-            src="/WhatsApp Image 2025-08-30 at 00.02.10_8a435342.jpg"
+            src={base + "WhatsApp Image 2025-08-30 at 00.02.10_8a435342.jpg"}
             alt="Shark"
             className="w-full h-full object-contain opacity-25 animate-bounce duration-7000 delay-4000"
           />
@@ -87,7 +88,7 @@ const Registration = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="/register"
+              href={base + "#/register"}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center"

@@ -7,13 +7,13 @@ const Header = () => {
 
   const base = import.meta.env.BASE_URL || "/";
   const navItems = [
-    { name: "About", href: `${base}#about` },
-    { name: "Prizes", href: `${base}#prizes` },
-    { name: "Tracks", href: `${base}#tracks` },
-    { name: "Timeline", href: `${base}#timeline` },
-    { name: "Rules", href: `${base}#rules` },
-    { name: "Register", href: `${base}register` },
-    { name: "FAQ", href: `${base}#faq` },
+    { name: "About", href: `${base}#/` },
+    { name: "Prizes", href: `${base}#/` },
+    { name: "Tracks", href: `${base}#/` },
+    { name: "Timeline", href: `${base}#/` },
+    { name: "Rules", href: `${base}#/` },
+    { name: "Register", href: `${base}#/register` },
+    { name: "FAQ", href: `${base}#/` },
   ];
 
   return (
@@ -21,7 +21,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
-            <a href={base} className="flex items-center space-x-3">
+            <a href={`${base}#/`} className="flex items-center space-x-3">
               <div className="bg-gradient-to-r from-blue-500 to-cyan-400 p-2 rounded-lg">
                 <Shark className="w-8 h-8 text-white" />
               </div>

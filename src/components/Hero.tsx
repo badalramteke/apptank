@@ -52,10 +52,12 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const base = import.meta.env.BASE_URL || "/";
+
   return (
     <section
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-center bg-cover"
-      style={{ backgroundImage: "url('/APPTANKimage.jpg')" }}
+      style={{ backgroundImage: `url('${base}APPTANKimage.jpg')` }}
     >
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-black/40"></div>
@@ -63,21 +65,21 @@ const Hero = () => {
       {/* Animated Sharks */}
       <div className="absolute top-20 right-10 w-48 h-48 animate-swim opacity-60">
         <img
-          src="/APPTANKimage.jpg"
+          src={base + "APPTANKimage.jpg"}
           alt="Swimming Shark"
           className="w-full h-full object-contain animate-float"
         />
       </div>
       <div className="absolute top-1/3 left-5 w-40 h-40 animate-swim opacity-40">
         <img
-          src="/APPTANKimage.jpg"
+          src={base + "APPTANKimage.jpg"}
           alt="Swimming Shark"
           className="w-full h-full object-contain animate-float"
         />
       </div>
       <div className="absolute bottom-32 right-1/4 w-44 h-44 animate-swim opacity-50">
         <img
-          src="/APPTANKimage.jpg"
+          src={base + "APPTANKimage.jpg"}
           alt="Swimming Shark"
           className="w-full h-full object-contain animate-float"
         />
